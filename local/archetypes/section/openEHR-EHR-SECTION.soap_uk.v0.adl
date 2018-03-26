@@ -1,0 +1,78 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.soap_uk.v0
+
+concept
+	[at0000]	-- SOAP
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Hildegard Franke">
+		["email"] = <"hildi@freshehr.com">
+		["organisation"] = <"freshEHR Clinical Informatics Ltd.">
+		["date"] = <"2018-03-16">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For SOAP(E) headings in the record based on the problem oriented recording style of Lawrence Weed.">
+			use = <"For structured problem oriented records">
+			keywords = <"subjective", "objective", "assessment", "plan", "education", "problem", "oriented">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Ian McNicoll freshEHR Clinical Informatics Ltd.", ...>
+	other_details = <
+		["references"] = <"Weed LL. Medical records that guide and teach. New Engl J Med: 1987; 278:593-9 and 278:652-657
+
+Weed LL Medical records, medical education and patient care. Press of the Case Western Reserve University, 1969 
+
+http://www.prorec.it/documenti/EPR_EHR/NHS-Update-POMR-SOAP.doc">
+		["MD5-CAM-1.0.1"] = <"95957201CC2BB31CB6F903B1B95EC22F">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+	>
+
+definition
+	SECTION[at0000] matches {	-- SOAP
+		items cardinality matches {1..*; unordered} matches {
+			SECTION[at0001] occurrences matches {0..1} matches {*}
+			SECTION[at0002] occurrences matches {0..1} matches {*}
+			SECTION[at0003] occurrences matches {0..1} matches {*}
+			SECTION[at0004] occurrences matches {0..1} matches {*}
+			SECTION[at0005] occurrences matches {0..1} matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"SOAP">
+					description = <"Problem-oriented heading in the record of the problem presented by the patient or client.">
+				>
+				["at0001"] = <
+					text = <"Subjective">
+					description = <"The subjective findings or story told by the person.">
+				>
+				["at0002"] = <
+					text = <"Objective">
+					description = <"The objective findings or observations made by the clinician.">
+				>
+				["at0003"] = <
+					text = <"Assessment">
+					description = <"The assessment made by the clinician.">
+				>
+				["at0004"] = <
+					text = <"Plan">
+					description = <"Plans made or procedures carried out.">
+				>
+				["at0005"] = <
+					text = <"Education">
+					description = <"Educational components offered.">
+				>
+			>
+		>
+	>

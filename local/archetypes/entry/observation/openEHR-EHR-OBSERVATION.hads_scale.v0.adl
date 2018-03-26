@@ -1,0 +1,643 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.hads_scale.v0
+
+concept
+	[at0000]	-- *Hads scale(en)
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Daniel Habashi">
+		["email"] = <"dh@patientsky.com">
+		["organisation"] = <"PatientSky AS">
+		["date"] = <"2016-04-28">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Hospital Anxiety and Depression Scale (HADS) was originally developed by Zigmond and Snaith (1983) and is commonly used by doctors to determine the levels of anxiety and depression that a patient is experiencing. The HADS is a fourteen item scale that generates ordinal data. Seven of the items relate to anxiety and seven relate to depression. ">
+			use = <"The HADS is a fourteen item scale. 
+
+Patients are asked to choose one response from the four given for each interview. They should give an immediate response and be dissuaded from thinking too long about their answers. The questions relating to anxiety are marks \"A\", and to depression \"D\". The score for each answer is given next to the choice. The patient is to answer how it currently describes their feelings. 
+
+Scoring the questionnaire: Each item on the questionnaire is scored from 0-3 for a total of 0-21 for either anxiety or depression. The HADS uses a scale, and therefore the data returned from the HADS is ordinal. ">
+			keywords = <"HAD Scale", "HADS", "HADS Scale", "Hospital Anxiety and Depression scale">
+			misuse = <"The Scale is not to be used to diagnose depression but to clarify mixed conditions and masked anxiety.">
+			copyright = <"">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"*Hospital Anxiety and Depression Scale (HADS) was originally developed by Zigmond and Snaith (1983) and is commonly used by doctors to determine the levels of anxiety and depression that a patient is experiencing. The HADS is a fourteen item scale that generates ordinal data. Seven of the items relate to anxiety and seven relate to depression. (en)">
+			use = <"*The HADS is a fourteen item scale. 
+
+Patients are asked to choose one response from the four given for each interview. They should give an immediate response and be dissuaded from thinking too long about their answers. The questions relating to anxiety are marks \"A\", and to depression \"D\". The score for each answer is given next to the choice. The patient is to answer how it currently describes their feelings. 
+
+Scoring the questionnaire: Each item on the questionnaire is scored from 0-3 for a total of 0-21 for either anxiety or depression. The HADS uses a scale, and therefore the data returned from the HADS is ordinal. (en)">
+			keywords = <"*HAD Scale(en)", "*HADS(en)", "*HADS Scale(en)", "*Hospital Anxiety and Depression scale(en)">
+			misuse = <"*The Scale is not to be used to diagnose depression but to clarify mixed conditions and masked anxiety.(en)">
+			copyright = <"*(en)">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["current_contact"] = <"Daniel Habashi, PatientSky AS<dh@patientsky.com>">
+		["MD5-CAM-1.0.1"] = <"4C77953F62A2898DD431A5D712EA53F0">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- *Hads scale(en)
+		data matches {
+			HISTORY[at0001] matches {	-- *Event Series(en)
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- *Any event(en)
+						data matches {
+							ITEM_TREE[at0003] matches {	-- *Tree(en)
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Urolig
+										value matches {
+											0|[local::at0014], 	-- *Not at all.(en)
+											1|[local::at0019], 	-- *From time to time, occasionally. (en)
+											2|[local::at0020]  	-- *A lot of the time(en)
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- *Enjoyment(en)
+										value matches {
+											0|[local::at0021], 	-- *Definitely as much(en)
+											1|[local::at0022], 	-- *Not quite so much.(en)
+											2|[local::at0023], 	-- *Only a little(en)
+											3|[local::at0024]  	-- *Hardly at all(en)
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- *Fear(en)
+										value matches {
+											0|[local::at0025], 	-- *Not at all(en)
+											1|[local::at0026], 	-- *A little, but it doesn't worry me(en)
+											2|[local::at0027], 	-- *Yes, but not too badly.(en)
+											3|[local::at0028]  	-- *Very definitely and quite badly.(en)
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- *Pleasure(en)
+										value matches {
+											0|[local::at0032], 	-- *As much as I always could(en)
+											1|[local::at0031], 	-- *Not quite so much now(en)
+											2|[local::at0030], 	-- *Definitely not so much now(en)
+											3|[local::at0029]  	-- *Not at all(en)
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- *Worry(en)
+										value matches {
+											0|[local::at0033], 	-- *Only occasionally.(en)
+											1|[local::at0034], 	-- *Fromt iem to time, but not too often.(en)
+											2|[local::at0035], 	-- *A lot of the time(en)
+											3|[local::at0036]  	-- *A great deal of the time(en)
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- *Cheerful(en)
+										value matches {
+											0|[local::at0037], 	-- *Most of the time.(en)
+											1|[local::at0038], 	-- *Sometimes.(en)
+											2|[local::at0039], 	-- *Not often(en)
+											3|[local::at0040]  	-- *Not at all.(en)
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- *Relax(en)
+										value matches {
+											0|[local::at0041], 	-- *Definitely.(en)
+											1|[local::at0042], 	-- *Usually(en)
+											2|[local::at0043], 	-- *Not often.(en)
+											3|[local::at0044]  	-- *Not at all.(en)
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {	-- *Slow(en)
+										value matches {
+											0|[local::at0045], 	-- *Not at all.(en)
+											1|[local::at0046], 	-- *Sometimes(en)
+											2|[local::at0047], 	-- *Very often(en)
+											3|[local::at0048]  	-- *Nearly all the time(en)
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- *Fright(en)
+										value matches {
+											0|[local::at0049], 	-- *Not at all.(en)
+											1|[local::at0050], 	-- *Occasionally.(en)
+											2|[local::at0051], 	-- *Quite often.(en)
+											3|[local::at0052]  	-- *Very often.(en)
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {	-- *Interest(en)
+										value matches {
+											0|[local::at0053], 	-- *I take just as much care as ever.(en)
+											1|[local::at0054], 	-- *I may not take quite as much care.(en)
+											2|[local::at0055], 	-- *I don't take as much care as I should.(en)
+											3|[local::at0056]  	-- *Definitely.(en)
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {	-- *Restless(en)
+										value matches {
+											C_DV_ORDINAL <
+											>
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {	-- *Look forward(en)
+										value matches {
+											C_DV_ORDINAL <
+											>
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {	-- *Panic(en)
+										value matches {
+											C_DV_ORDINAL <
+											>
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {	-- *Hobby(en)
+										value matches {
+											C_DV_ORDINAL <
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Hads scale">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Tense">
+					description = <"I feel tense or \"wound up\".">
+				>
+				["at0005"] = <
+					text = <"Enjoyment">
+					description = <"I still enjoy the things I used to enjoy.">
+				>
+				["at0006"] = <
+					text = <"Fear">
+					description = <"I get a sort of frightened feeling as if something awful is about to happen.">
+				>
+				["at0007"] = <
+					text = <"Pleasure">
+					description = <"I can laugh and see the funny side of things.">
+				>
+				["at0008"] = <
+					text = <"Worry">
+					description = <"Worrying thoughts go through my mind.">
+				>
+				["at0009"] = <
+					text = <"Cheerful">
+					description = <"I feel cheerful.">
+				>
+				["at0010"] = <
+					text = <"Relax">
+					description = <"I can sit at ease and feel relaxed.">
+				>
+				["at0011"] = <
+					text = <"Slow">
+					description = <"I feel as if I am slowed down.">
+				>
+				["at0012"] = <
+					text = <"Fright">
+					description = <"I get a sort of frightened feeling like \"butterflies\" in the stomach.">
+				>
+				["at0013"] = <
+					text = <"Interest">
+					description = <"I have lost interest in my appearance.">
+				>
+				["at0014"] = <
+					text = <"Not at all.">
+					description = <"I do not feel tense or wound up.">
+				>
+				["at0015"] = <
+					text = <"Restless">
+					description = <"I feel restless as I have to be on the move.">
+				>
+				["at0016"] = <
+					text = <"Look forward">
+					description = <"I look forward with enjoyment to things.">
+				>
+				["at0017"] = <
+					text = <"Panic">
+					description = <"I get sudden feelings of panic.">
+				>
+				["at0018"] = <
+					text = <"Hobby">
+					description = <"I can enjoy a good book or radio ro TV program.">
+				>
+				["at0019"] = <
+					text = <"From time to time, occasionally. ">
+					description = <"I occasionally feel tense or wound up.">
+				>
+				["at0020"] = <
+					text = <"A lot of the time">
+					description = <"I feel tense or wound up most of the time.">
+				>
+				["at0021"] = <
+					text = <"Definitely as much">
+					description = <"I definitely still enjoy the things I used to enjoy.">
+				>
+				["at0022"] = <
+					text = <"Not quite so much.">
+					description = <"I do not quite so much enjoy the things I used to enjoy.">
+				>
+				["at0023"] = <
+					text = <"Only a little">
+					description = <"I still enjoy the things I used to enjoy, but only a little.">
+				>
+				["at0024"] = <
+					text = <"Hardly at all">
+					description = <"I hardly at all enjoy the things I used to enjoy.">
+				>
+				["at0025"] = <
+					text = <"Not at all">
+					description = <"I never get a sort of frightened feeling as if something awful is about to happen.">
+				>
+				["at0026"] = <
+					text = <"A little, but it doesn't worry me">
+					description = <"I get a little frightened feeling as if something awful is about to happen, but it doesn't worry me. ">
+				>
+				["at0027"] = <
+					text = <"Yes, but not too badly.">
+					description = <"I get a sort of frightened feeling as if something awful is about to happen, but not too badly.">
+				>
+				["at0028"] = <
+					text = <"Very definitely and quite badly.">
+					description = <"I definitely get a sort of frighetened feeling as if something awful is about to happen, and I get it quite badly.">
+				>
+				["at0029"] = <
+					text = <"Not at all">
+					description = <"I can't laugh and see the funny side of things.">
+				>
+				["at0030"] = <
+					text = <"Definitely not so much now">
+					description = <"I can still laugh and see the funny side of things, but not so much now.">
+				>
+				["at0031"] = <
+					text = <"Not quite so much now">
+					description = <"I can laugh and see the funny side of things, but not quite so much now.">
+				>
+				["at0032"] = <
+					text = <"As much as I always could">
+					description = <"I can laugh and see the funny side of things as much as I always could.">
+				>
+				["at0033"] = <
+					text = <"Only occasionally.">
+					description = <"I only occasionally experience worrying thoughts going through my mind.">
+				>
+				["at0034"] = <
+					text = <"Fromt iem to time, but not too often.">
+					description = <"I experience from time to time, but not too often, worrying thoughts going through my mind.">
+				>
+				["at0035"] = <
+					text = <"A lot of the time">
+					description = <"I experience, a lot of the time, worrying thoughts going through my mind.">
+				>
+				["at0036"] = <
+					text = <"A great deal of the time">
+					description = <"I experience, a great deal of the time, worrying thoughts going through my mind.">
+				>
+				["at0037"] = <
+					text = <"Most of the time.">
+					description = <"I feel cheerful most of the time.">
+				>
+				["at0038"] = <
+					text = <"Sometimes.">
+					description = <"I sometimes feel cheerful.">
+				>
+				["at0039"] = <
+					text = <"Not often">
+					description = <"I don't often feel cheerful.">
+				>
+				["at0040"] = <
+					text = <"Not at all.">
+					description = <"I don't feel cheerful at all.">
+				>
+				["at0041"] = <
+					text = <"Definitely.">
+					description = <"I can definitely sit at ease and feel relaxed.">
+				>
+				["at0042"] = <
+					text = <"Usually">
+					description = <"I can usually sit at ease and feel relaxed.">
+				>
+				["at0043"] = <
+					text = <"Not often.">
+					description = <"I can sit at ease and feel relaxed, but not often.">
+				>
+				["at0044"] = <
+					text = <"Not at all.">
+					description = <"I cannot sit at ease and feel relaxed.">
+				>
+				["at0045"] = <
+					text = <"Not at all.">
+					description = <"I do not feel as if I am slowed down.">
+				>
+				["at0046"] = <
+					text = <"Sometimes">
+					description = <"I sometimes feel as if I am slowed down.">
+				>
+				["at0047"] = <
+					text = <"Very often">
+					description = <"I very often feel as if I am slowed down.">
+				>
+				["at0048"] = <
+					text = <"Nearly all the time">
+					description = <"I nearly all the time feel as if I am slowed down.">
+				>
+				["at0049"] = <
+					text = <"Not at all.">
+					description = <"I do not get a sort of frightened feeling like \"butterflies\" in the stomach.">
+				>
+				["at0050"] = <
+					text = <"Occasionally.">
+					description = <"I occasionally get a sort of frightened feeling like \"butterflies\" in the stomach.">
+				>
+				["at0051"] = <
+					text = <"Quite often.">
+					description = <"I quite often get a sort of frightened feeling like \"butterflies\" in the stomach.">
+				>
+				["at0052"] = <
+					text = <"Very often.">
+					description = <"I very often get a sort of frightened feeling like \"butterflies\" in the stomach.">
+				>
+				["at0053"] = <
+					text = <"I take just as much care as ever.">
+					description = <"I take just as much care as ever in my appearance.">
+				>
+				["at0054"] = <
+					text = <"I may not take quite as much care.">
+					description = <"I may not take quite as much care in my appearance as before.">
+				>
+				["at0055"] = <
+					text = <"I don't take as much care as I should.">
+					description = <"I don't take as much care in my appearance as I should.">
+				>
+				["at0056"] = <
+					text = <"Definitely.">
+					description = <"*">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Hads scale(en)">
+					description = <"*unknown(en)">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"**(en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0004"] = <
+					text = <"Urolig">
+					description = <"*I feel tense or \"wound up\".(en)">
+				>
+				["at0005"] = <
+					text = <"*Enjoyment(en)">
+					description = <"*I still enjoy the things I used to enjoy.(en)">
+				>
+				["at0006"] = <
+					text = <"*Fear(en)">
+					description = <"*I get a sort of frightened feeling as if something awful is about to happen.(en)">
+				>
+				["at0007"] = <
+					text = <"*Pleasure(en)">
+					description = <"*I can laugh and see the funny side of things.(en)">
+				>
+				["at0008"] = <
+					text = <"*Worry(en)">
+					description = <"*Worrying thoughts go through my mind.(en)">
+				>
+				["at0009"] = <
+					text = <"*Cheerful(en)">
+					description = <"*I feel cheerful.(en)">
+				>
+				["at0010"] = <
+					text = <"*Relax(en)">
+					description = <"*I can sit at ease and feel relaxed.(en)">
+				>
+				["at0011"] = <
+					text = <"*Slow(en)">
+					description = <"*I feel as if I am slowed down.(en)">
+				>
+				["at0012"] = <
+					text = <"*Fright(en)">
+					description = <"*I get a sort of frightened feeling like \"butterflies\" in the stomach.(en)">
+				>
+				["at0013"] = <
+					text = <"*Interest(en)">
+					description = <"*I have lost interest in my appearance.(en)">
+				>
+				["at0014"] = <
+					text = <"*Not at all.(en)">
+					description = <"*I do not feel tense or wound up.(en)">
+				>
+				["at0015"] = <
+					text = <"*Restless(en)">
+					description = <"*I feel restless as I have to be on the move.(en)">
+				>
+				["at0016"] = <
+					text = <"*Look forward(en)">
+					description = <"*I look forward with enjoyment to things.(en)">
+				>
+				["at0017"] = <
+					text = <"*Panic(en)">
+					description = <"*I get sudden feelings of panic.(en)">
+				>
+				["at0018"] = <
+					text = <"*Hobby(en)">
+					description = <"*I can enjoy a good book or radio ro TV program.(en)">
+				>
+				["at0019"] = <
+					text = <"*From time to time, occasionally. (en)">
+					description = <"*I occasionally feel tense or wound up.(en)">
+				>
+				["at0020"] = <
+					text = <"*A lot of the time(en)">
+					description = <"*I feel tense or wound up most of the time.(en)">
+				>
+				["at0021"] = <
+					text = <"*Definitely as much(en)">
+					description = <"*I definitely still enjoy the things I used to enjoy.(en)">
+				>
+				["at0022"] = <
+					text = <"*Not quite so much.(en)">
+					description = <"*I do not quite so much enjoy the things I used to enjoy.(en)">
+				>
+				["at0023"] = <
+					text = <"*Only a little(en)">
+					description = <"*I still enjoy the things I used to enjoy, but only a little.(en)">
+				>
+				["at0024"] = <
+					text = <"*Hardly at all(en)">
+					description = <"*I hardly at all enjoy the things I used to enjoy.(en)">
+				>
+				["at0025"] = <
+					text = <"*Not at all(en)">
+					description = <"*I never get a sort of frightened feeling as if something awful is about to happen.(en)">
+				>
+				["at0026"] = <
+					text = <"*A little, but it doesn't worry me(en)">
+					description = <"*I get a little frightened feeling as if something awful is about to happen, but it doesn't worry me. (en)">
+				>
+				["at0027"] = <
+					text = <"*Yes, but not too badly.(en)">
+					description = <"*I get a sort of frightened feeling as if something awful is about to happen, but not too badly.(en)">
+				>
+				["at0028"] = <
+					text = <"*Very definitely and quite badly.(en)">
+					description = <"*I definitely get a sort of frighetened feeling as if something awful is about to happen, and I get it quite badly.(en)">
+				>
+				["at0029"] = <
+					text = <"*Not at all(en)">
+					description = <"*I can't laugh and see the funny side of things.(en)">
+				>
+				["at0030"] = <
+					text = <"*Definitely not so much now(en)">
+					description = <"*I can still laugh and see the funny side of things, but not so much now.(en)">
+				>
+				["at0031"] = <
+					text = <"*Not quite so much now(en)">
+					description = <"*I can laugh and see the funny side of things, but not quite so much now.(en)">
+				>
+				["at0032"] = <
+					text = <"*As much as I always could(en)">
+					description = <"*I can laugh and see the funny side of things as much as I always could.(en)">
+				>
+				["at0033"] = <
+					text = <"*Only occasionally.(en)">
+					description = <"*I only occasionally experience worrying thoughts going through my mind.(en)">
+				>
+				["at0034"] = <
+					text = <"*Fromt iem to time, but not too often.(en)">
+					description = <"*I experience from time to time, but not too often, worrying thoughts going through my mind.(en)">
+				>
+				["at0035"] = <
+					text = <"*A lot of the time(en)">
+					description = <"*I experience, a lot of the time, worrying thoughts going through my mind.(en)">
+				>
+				["at0036"] = <
+					text = <"*A great deal of the time(en)">
+					description = <"*I experience, a great deal of the time, worrying thoughts going through my mind.(en)">
+				>
+				["at0037"] = <
+					text = <"*Most of the time.(en)">
+					description = <"*I feel cheerful most of the time.(en)">
+				>
+				["at0038"] = <
+					text = <"*Sometimes.(en)">
+					description = <"*I sometimes feel cheerful.(en)">
+				>
+				["at0039"] = <
+					text = <"*Not often(en)">
+					description = <"*I don't often feel cheerful.(en)">
+				>
+				["at0040"] = <
+					text = <"*Not at all.(en)">
+					description = <"*I don't feel cheerful at all.(en)">
+				>
+				["at0041"] = <
+					text = <"*Definitely.(en)">
+					description = <"*I can definitely sit at ease and feel relaxed.(en)">
+				>
+				["at0042"] = <
+					text = <"*Usually(en)">
+					description = <"*I can usually sit at ease and feel relaxed.(en)">
+				>
+				["at0043"] = <
+					text = <"*Not often.(en)">
+					description = <"*I can sit at ease and feel relaxed, but not often.(en)">
+				>
+				["at0044"] = <
+					text = <"*Not at all.(en)">
+					description = <"*I cannot sit at ease and feel relaxed.(en)">
+				>
+				["at0045"] = <
+					text = <"*Not at all.(en)">
+					description = <"*I do not feel as if I am slowed down.(en)">
+				>
+				["at0046"] = <
+					text = <"*Sometimes(en)">
+					description = <"*I sometimes feel as if I am slowed down.(en)">
+				>
+				["at0047"] = <
+					text = <"*Very often(en)">
+					description = <"*I very often feel as if I am slowed down.(en)">
+				>
+				["at0048"] = <
+					text = <"*Nearly all the time(en)">
+					description = <"*I nearly all the time feel as if I am slowed down.(en)">
+				>
+				["at0049"] = <
+					text = <"*Not at all.(en)">
+					description = <"*I do not get a sort of frightened feeling like \"butterflies\" in the stomach.(en)">
+				>
+				["at0050"] = <
+					text = <"*Occasionally.(en)">
+					description = <"*I occasionally get a sort of frightened feeling like \"butterflies\" in the stomach.(en)">
+				>
+				["at0051"] = <
+					text = <"*Quite often.(en)">
+					description = <"*I quite often get a sort of frightened feeling like \"butterflies\" in the stomach.(en)">
+				>
+				["at0052"] = <
+					text = <"*Very often.(en)">
+					description = <"*I very often get a sort of frightened feeling like \"butterflies\" in the stomach.(en)">
+				>
+				["at0053"] = <
+					text = <"*I take just as much care as ever.(en)">
+					description = <"*I take just as much care as ever in my appearance.(en)">
+				>
+				["at0054"] = <
+					text = <"*I may not take quite as much care.(en)">
+					description = <"*I may not take quite as much care in my appearance as before.(en)">
+				>
+				["at0055"] = <
+					text = <"*I don't take as much care as I should.(en)">
+					description = <"*I don't take as much care in my appearance as I should.(en)">
+				>
+				["at0056"] = <
+					text = <"*Definitely.(en)">
+					description = <"**(en)">
+				>
+			>
+		>
+	>
